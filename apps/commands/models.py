@@ -31,3 +31,10 @@ class Command(models.Model):
         help_text='Any information on command',
         blank=True
     )
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL
+    )
+
+    def __str__(self):
+        return self.command[:20]
